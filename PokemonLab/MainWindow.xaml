@@ -41,28 +41,29 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
                 <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[0]}" Background="Black" Command="{Binding Normal}" />
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[1]}" Background="Orange"/>
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[2]}" Background="Blue"/>
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[3]}" Background="LightGreen"/>
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[4]}" Background="Yellow"/>
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[5]}" Background="Aqua"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[1]}" Background="Orange" Command="{Binding Fire}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[2]}" Background="Blue" Command="{Binding Water}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[3]}" Background="LightGreen" Command="{Binding Grass}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[4]}" Background="Yellow" Command="{Binding Electric}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[5]}" Background="Aqua" Command="{Binding Ice}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Propertystatus}" Foreground="Black" Background="BlanchedAlmond" Command="{Binding Oa}"/>
             </StackPanel>
             <StackPanel Grid.Column="1">
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[6]}" Background="Brown"/>
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[7]}" Background="BlueViolet"/>
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[8]}" Background="Sienna"/>
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[9]}" Background="LightBlue"/>
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[10]}" Background="HotPink"/>
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[11]}" Background="LimeGreen"/>
-                <Button Style="{StaticResource buttonsys}" Content="單一屬性" Foreground="Black" Background="BlanchedAlmond"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[6]}" Background="Brown" Command="{Binding Fighting}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[7]}" Background="BlueViolet" Command="{Binding Posison}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[8]}" Background="Sienna" Command="{Binding Ground}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[9]}" Background="LightBlue" Command="{Binding Flying}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[10]}" Background="HotPink" Command="{Binding Psychic}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[11]}" Background="LimeGreen" Command="{Binding Bug}"/>
+                <TextBlock Text="{Binding Selectattribute}" Style="{StaticResource PMAttr}"/>
             </StackPanel>
             <StackPanel Grid.Column="2">
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[12]}" Background="Maroon"/>
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[13]}" Background="MediumSlateBlue"/>
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[14]}" Background="DarkBlue"/>
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[15]}" Background="SaddleBrown"/>
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[16]}" Background="Gray"/>
-                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[17]}" Background="LightPink"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[12]}" Background="Maroon" Command="{Binding Rock}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[13]}" Background="MediumSlateBlue" Command="{Binding Ghost}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[14]}" Background="DarkBlue" Command="{Binding Dragon}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[15]}" Background="SaddleBrown" Command="{Binding Dark}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[16]}" Background="Gray" Command="{Binding Steel}"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[17]}" Background="LightPink" Command="{Binding Fairy}"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="1">

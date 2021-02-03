@@ -16,18 +16,11 @@ namespace PokemonLab.ViewModels
             set { SetProperty(ref _pmattributes, value); }
         }
 
-        private int _pmweakness;
-        public int PmWeakness
+        private double _pmweakness;
+        public double PmWeakness
         {
             get { return _pmweakness; }
             set { SetProperty(ref _pmweakness, value); }
-        }
-
-        private bool _OAE;
-        public bool OAE
-        {
-            get { return _OAE; }
-            set { SetProperty(ref _OAE, value); }
         }
 
         public override string ToString()
