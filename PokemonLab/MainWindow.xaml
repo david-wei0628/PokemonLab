@@ -1,0 +1,119 @@
+﻿<Window x:Class="PokemonLab.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokemonLab"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:vm="clr-namespace:PokemonLab.ViewModels"
+        mc:Ignorable="d"
+        Title="Pokemon" Height="480" Width="800">
+    <Window.Resources >
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries >
+                <ResourceDictionary Source="UIStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Style="{StaticResource grond}">
+            <TextBlock Text="屬性" Style="{StaticResource textblock}"/>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1" Style="{StaticResource grond}">
+            <TextBlock Text="弱點屬性" Style="{StaticResource textblock}"/>
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[0]}" Background="Black" Command="{Binding Normal}" />
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[1]}" Background="Orange"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[2]}" Background="Blue"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[3]}" Background="LightGreen"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[4]}" Background="Yellow"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[5]}" Background="Aqua"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[6]}" Background="Brown"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[7]}" Background="BlueViolet"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[8]}" Background="Sienna"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[9]}" Background="LightBlue"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[10]}" Background="HotPink"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[11]}" Background="LimeGreen"/>
+                <Button Style="{StaticResource buttonsys}" Content="單一屬性" Foreground="Black" Background="BlanchedAlmond"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[12]}" Background="Maroon"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[13]}" Background="MediumSlateBlue"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[14]}" Background="DarkBlue"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[15]}" Background="SaddleBrown"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[16]}" Background="Gray"/>
+                <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[17]}" Background="LightPink"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[0]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[0].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[1]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[1].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[2]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[2].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[3]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[3].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[4]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[4].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[5]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[5].PmWeakness}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[6]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[6].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[7]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[7].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[8]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[8].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[9]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[9].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[10]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[10].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[11]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[11].PmWeakness}"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[12]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[12].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[13]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[13].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[14]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[14].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[15]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[15].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[16]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[16].PmWeakness}"/>
+                <TextBlock Style="{StaticResource PMAttr}" Text="{Binding Attributes[17]}"/>
+                <TextBlock Style="{StaticResource AttrResult}" Text="{Binding Attributes[17].PmWeakness}"/>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>

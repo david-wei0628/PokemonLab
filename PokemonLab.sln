@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonLab", "PokemonLab\PokemonLab.csproj", "{3829F0A9-0524-4D89-A6E2-12D24CAD29EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BindingLibrary", "BindingLibrary\BindingLibrary.csproj", "{1CED3DD9-0C78-426F-BBED-A5300B66B163}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3829F0A9-0524-4D89-A6E2-12D24CAD29EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3829F0A9-0524-4D89-A6E2-12D24CAD29EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3829F0A9-0524-4D89-A6E2-12D24CAD29EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3829F0A9-0524-4D89-A6E2-12D24CAD29EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CED3DD9-0C78-426F-BBED-A5300B66B163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CED3DD9-0C78-426F-BBED-A5300B66B163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CED3DD9-0C78-426F-BBED-A5300B66B163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CED3DD9-0C78-426F-BBED-A5300B66B163}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB654143-D3FE-4D0A-9DEC-006FAE895DD1}
+	EndGlobalSection
+EndGlobal
