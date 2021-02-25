@@ -28,7 +28,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Style="{StaticResource grond}">
-            <TextBlock Text="屬性" Style="{StaticResource textblock}"/>
+            <TextBlock Text="敵方屬性" Style="{StaticResource textblock}"/>
         </Grid>
         <Grid Grid.Row="0" Grid.Column="1" Style="{StaticResource grond}">
             <TextBlock Text="弱點屬性" Style="{StaticResource textblock}"/>
@@ -64,6 +64,7 @@
                 <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[15]}" Background="SaddleBrown" Command="{Binding Dark}"/>
                 <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[16]}" Background="Gray" Command="{Binding Steel}"/>
                 <Button Style="{StaticResource buttonsys}" Content="{Binding Attributes[17]}" Background="LightPink" Command="{Binding Fairy}"/>
+                <Button Style="{StaticResource buttonsys}" Content="重製" Foreground="Black" IsEnabled="{Binding OAE}" Command="{Binding Restatus}"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="1">

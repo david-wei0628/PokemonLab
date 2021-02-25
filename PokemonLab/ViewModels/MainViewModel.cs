@@ -23,6 +23,8 @@ namespace PokemonLab.ViewModels
         {
             Attributes = PokemonAttr();
             Propertystatus = "單一屬性";
+            Selectattribute = "";
+
         }
 
         private static ObservableCollection<AttrViewModel> PokemonAttr()
@@ -92,6 +94,20 @@ namespace PokemonLab.ViewModels
             }
         }
 
+        private ICommand _restatus;
+        public ICommand Restatus
+        {
+            get 
+            {
+                _restatus = new RelayCommand((x) =>
+                {
+                    Selectattribute = "";
+                    Attributes = PokemonAttr();
+                });
+                return _restatus;
+            }
+        }
+
         private ICommand _normal;
         public ICommand Normal
         {
@@ -106,7 +122,10 @@ namespace PokemonLab.ViewModels
                      }
                      else
                      {
-                         Selectattribute = Selectattribute + " / " +Attributes[0].PmAttributes;
+                         if (Selectattribute == "")
+                         { Selectattribute = Attributes[0].PmAttributes; }
+                         else
+                         { Selectattribute = Selectattribute + " / " + Attributes[0].PmAttributes; }
                      }
                      Attributes[6].PmWeakness = Attributes[6].PmWeakness * 2;
                      Attributes[13].PmWeakness = Attributes[13].PmWeakness * 0;
@@ -130,7 +149,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[1].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[1].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[1].PmAttributes; }
                     }
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *0.5;
                     Attributes[2].PmWeakness = Attributes[2].PmWeakness *2;
@@ -160,7 +182,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[2].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[2].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[2].PmAttributes; }
                     }
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *0.5;
                     Attributes[2].PmWeakness = Attributes[2].PmWeakness *0.5;
@@ -187,7 +212,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[3].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[3].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[3].PmAttributes; }
                     }
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *2;
                     Attributes[2].PmWeakness = Attributes[2].PmWeakness *0.5;
@@ -217,7 +245,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[4].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[4].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[4].PmAttributes; }
                     }
                     Attributes[4].PmWeakness = Attributes[4].PmWeakness *0.5;
                     Attributes[8].PmWeakness = Attributes[8].PmWeakness *2;
@@ -242,7 +273,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[5].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[5].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[5].PmAttributes; }
                     }
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *2;
                     Attributes[5].PmWeakness = Attributes[5].PmWeakness *0.5;
@@ -268,7 +302,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[6].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[6].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[6].PmAttributes; }
                     }
                     Attributes[9].PmWeakness = Attributes[9].PmWeakness *2;
                     Attributes[10].PmWeakness = Attributes[10].PmWeakness *2;
@@ -295,7 +332,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[7].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[7].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[7].PmAttributes; }
                     }
                     Attributes[3].PmWeakness = Attributes[3].PmWeakness *0.5;
                     Attributes[6].PmWeakness = Attributes[6].PmWeakness *0.5;
@@ -323,7 +363,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[8].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[8].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[8].PmAttributes; }
                     }
                     Attributes[2].PmWeakness = Attributes[2].PmWeakness *2;
                     Attributes[3].PmWeakness = Attributes[3].PmWeakness *2;
@@ -350,7 +393,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[9].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[9].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[9].PmAttributes; }
                     }
                     Attributes[3].PmWeakness = Attributes[3].PmWeakness *0.5;
                     Attributes[4].PmWeakness = Attributes[4].PmWeakness *2;
@@ -378,7 +424,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[10].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[10].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[10].PmAttributes; }
                     }
                     Attributes[6].PmWeakness = Attributes[6].PmWeakness *0.5;
                     Attributes[10].PmWeakness = Attributes[10].PmWeakness *0.5;
@@ -404,7 +453,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[11].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[11].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[11].PmAttributes; }
                     }
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *2;
                     Attributes[3].PmWeakness = Attributes[3].PmWeakness *0.5;
@@ -431,7 +483,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[12].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[12].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[12].PmAttributes; }
                     }
                     Attributes[0].PmWeakness = Attributes[0].PmWeakness *0.5;
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *0.5;
@@ -461,7 +516,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[13].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[13].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[13].PmAttributes; }
                     }
                     Attributes[0].PmWeakness = Attributes[0].PmWeakness *0;
                     Attributes[6].PmWeakness = Attributes[6].PmWeakness *0;
@@ -488,7 +546,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[14].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[14].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[14].PmAttributes; }
                     }
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *0.5;
                     Attributes[2].PmWeakness = Attributes[2].PmWeakness *0.5;
@@ -516,7 +577,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[15].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[15].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[15].PmAttributes; }
                     }
                     Attributes[6].PmWeakness = Attributes[6].PmWeakness *2;
                     Attributes[10].PmWeakness = Attributes[13].PmWeakness *0;
@@ -543,7 +607,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[16].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[16].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[16].PmAttributes; }
                     }
                     Attributes[0].PmWeakness = Attributes[0].PmWeakness *0.5;
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *2;
@@ -578,7 +645,10 @@ namespace PokemonLab.ViewModels
                     }
                     else
                     {
-                        Selectattribute = Selectattribute + " / " + Attributes[17].PmAttributes;
+                        if (Selectattribute == "")
+                        { Selectattribute = Attributes[17].PmAttributes; }
+                        else
+                        { Selectattribute = Selectattribute + " / " + Attributes[17].PmAttributes; }
                     }
                     Attributes[6].PmWeakness = Attributes[6].PmWeakness *0.5;
                     Attributes[7].PmWeakness = Attributes[7].PmWeakness *2;
