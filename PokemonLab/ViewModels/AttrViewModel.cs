@@ -23,6 +23,13 @@ namespace PokemonLab.ViewModels
             set { SetProperty(ref _pmweakness, value); }
         }
 
+        private bool _selecttype;
+        public bool Selecttype
+        {
+            get { return _selecttype; }
+            set { SetProperty(ref _selecttype, value); }
+        }
+
         public override string ToString()
         {
             return PmAttributes;

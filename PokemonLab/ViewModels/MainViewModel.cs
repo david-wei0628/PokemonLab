@@ -31,25 +31,42 @@ namespace PokemonLab.ViewModels
         {
             return new ObservableCollection<AttrViewModel>
             {
-                new AttrViewModel { PmAttributes = "一般" , PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "火", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "水", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "草", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "電", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "冰", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "格鬥", PmWeakness = 1 } ,
-                new AttrViewModel { PmAttributes = "毒", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "飛行", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "地面", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "超能", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "蟲", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "岩石", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "幽靈", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "龍", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "惡", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "鋼", PmWeakness = 1 },
-                new AttrViewModel { PmAttributes = "妖精", PmWeakness = 1 }
+                new AttrViewModel { PmAttributes = "一般" , PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "火", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "水", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "草", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "電", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "冰", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "格鬥", PmWeakness = 1 ,Selecttype = true} ,
+                new AttrViewModel { PmAttributes = "毒", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "飛行", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "地面", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "超能", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "蟲", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "岩石", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "幽靈", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "龍", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "惡", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "鋼", PmWeakness = 1 ,Selecttype = true},
+                new AttrViewModel { PmAttributes = "妖精", PmWeakness = 1 ,Selecttype = true}
         };
+        }
+
+        public void modeX(int x)
+        {
+            if (!OAE)
+            {
+                Attributes = PokemonAttr();
+                Selectattribute = Attributes[x].PmAttributes;
+            }
+            else
+            {
+                if (Selectattribute == "")
+                { Selectattribute = Attributes[x].PmAttributes; }
+                else
+                { Selectattribute = Selectattribute + " / " + Attributes[x].PmAttributes; }
+                Attributes[x].Selecttype = !Attributes[x].Selecttype;
+            }
         }
 
         private string _selectattribute;
@@ -115,18 +132,8 @@ namespace PokemonLab.ViewModels
             {
                 _normal = new RelayCommand((x) =>
                  {
-                     if (!OAE) 
-                     { 
-                         Attributes = PokemonAttr();
-                         Selectattribute = Attributes[0].PmAttributes;
-                     }
-                     else
-                     {
-                         if (Selectattribute == "")
-                         { Selectattribute = Attributes[0].PmAttributes; }
-                         else
-                         { Selectattribute = Selectattribute + " / " + Attributes[0].PmAttributes; }
-                     }
+                     int x1 = 0;
+                     modeX(x1);
                      Attributes[6].PmWeakness = Attributes[6].PmWeakness * 2;
                      Attributes[13].PmWeakness = Attributes[13].PmWeakness * 0;
                      
@@ -142,18 +149,8 @@ namespace PokemonLab.ViewModels
             {
                 _fire = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[1].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[1].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[1].PmAttributes; }
-                    }
+                    int x1 = 1;
+                    modeX(x1);
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *0.5;
                     Attributes[2].PmWeakness = Attributes[2].PmWeakness *2;
                     Attributes[3].PmWeakness = Attributes[3].PmWeakness *0.5;
@@ -175,18 +172,8 @@ namespace PokemonLab.ViewModels
             {
                 _water = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[2].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[2].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[2].PmAttributes; }
-                    }
+                    int x1 = 2;
+                    modeX(x1);
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *0.5;
                     Attributes[2].PmWeakness = Attributes[2].PmWeakness *0.5;
                     Attributes[3].PmWeakness = Attributes[3].PmWeakness *2;
@@ -205,18 +192,8 @@ namespace PokemonLab.ViewModels
             {
                 _grass = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[3].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[3].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[3].PmAttributes; }
-                    }
+                    int x1 = 3;
+                    modeX(x1);
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *2;
                     Attributes[2].PmWeakness = Attributes[2].PmWeakness *0.5;
                     Attributes[3].PmWeakness = Attributes[3].PmWeakness *0.5;
@@ -238,18 +215,8 @@ namespace PokemonLab.ViewModels
             {
                 _electric = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[4].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[4].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[4].PmAttributes; }
-                    }
+                    int x1 = 4;
+                    modeX(x1);
                     Attributes[4].PmWeakness = Attributes[4].PmWeakness *0.5;
                     Attributes[8].PmWeakness = Attributes[8].PmWeakness *2;
                     Attributes[9].PmWeakness = Attributes[9].PmWeakness *0.5;
@@ -266,18 +233,8 @@ namespace PokemonLab.ViewModels
             {
                 _ice = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[5].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[5].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[5].PmAttributes; }
-                    }
+                    int x1 = 5;
+                    modeX(x1);
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *2;
                     Attributes[5].PmWeakness = Attributes[5].PmWeakness *0.5;
                     Attributes[6].PmWeakness = Attributes[6].PmWeakness *2;
@@ -295,18 +252,8 @@ namespace PokemonLab.ViewModels
             {
                 _fighting = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[6].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[6].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[6].PmAttributes; }
-                    }
+                    int x1 = 6;
+                    modeX(x1);
                     Attributes[9].PmWeakness = Attributes[9].PmWeakness *2;
                     Attributes[10].PmWeakness = Attributes[10].PmWeakness *2;
                     Attributes[11].PmWeakness = Attributes[11].PmWeakness *0.5;
@@ -325,18 +272,8 @@ namespace PokemonLab.ViewModels
             {
                 _poison = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[7].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[7].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[7].PmAttributes; }
-                    }
+                    int x1 = 7;
+                    modeX(x1);
                     Attributes[3].PmWeakness = Attributes[3].PmWeakness *0.5;
                     Attributes[6].PmWeakness = Attributes[6].PmWeakness *0.5;
                     Attributes[7].PmWeakness = Attributes[7].PmWeakness *0.5;
@@ -356,18 +293,8 @@ namespace PokemonLab.ViewModels
             {
                 _ground = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[8].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[8].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[8].PmAttributes; }
-                    }
+                    int x1 = 8;
+                    modeX(x1);
                     Attributes[2].PmWeakness = Attributes[2].PmWeakness *2;
                     Attributes[3].PmWeakness = Attributes[3].PmWeakness *2;
                     Attributes[4].PmWeakness = Attributes[4].PmWeakness *0;
@@ -386,18 +313,8 @@ namespace PokemonLab.ViewModels
             {
                 _flying = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[9].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[9].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[9].PmAttributes; }
-                    }
+                    int x1 = 9;
+                    modeX(x1);
                     Attributes[3].PmWeakness = Attributes[3].PmWeakness *0.5;
                     Attributes[4].PmWeakness = Attributes[4].PmWeakness *2;
                     Attributes[5].PmWeakness = Attributes[5].PmWeakness *2;
@@ -417,18 +334,8 @@ namespace PokemonLab.ViewModels
             {
                 _psychic = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[10].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[10].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[10].PmAttributes; }
-                    }
+                    int x1 = 10;
+                    modeX(x1);
                     Attributes[6].PmWeakness = Attributes[6].PmWeakness *0.5;
                     Attributes[10].PmWeakness = Attributes[10].PmWeakness *0.5;
                     Attributes[11].PmWeakness = Attributes[11].PmWeakness *2;
@@ -446,18 +353,8 @@ namespace PokemonLab.ViewModels
             {
                 _bug = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[11].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[11].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[11].PmAttributes; }
-                    }
+                    int x1 = 11;
+                    modeX(x1);
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *2;
                     Attributes[3].PmWeakness = Attributes[3].PmWeakness *0.5;
                     Attributes[6].PmWeakness = Attributes[6].PmWeakness *0.5;
@@ -476,18 +373,8 @@ namespace PokemonLab.ViewModels
             {
                 _rock = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[12].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[12].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[12].PmAttributes; }
-                    }
+                    int x1 = 12;
+                    modeX(x1);
                     Attributes[0].PmWeakness = Attributes[0].PmWeakness *0.5;
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *0.5;
                     Attributes[2].PmWeakness = Attributes[2].PmWeakness *2;
@@ -509,18 +396,8 @@ namespace PokemonLab.ViewModels
             {
                 _ghost = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[13].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[13].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[13].PmAttributes; }
-                    }
+                    int x1 = 13;
+                    modeX(x1);
                     Attributes[0].PmWeakness = Attributes[0].PmWeakness *0;
                     Attributes[6].PmWeakness = Attributes[6].PmWeakness *0;
                     Attributes[7].PmWeakness = Attributes[7].PmWeakness *0.5;
@@ -539,18 +416,8 @@ namespace PokemonLab.ViewModels
             {
                 _dragon = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[14].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[14].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[14].PmAttributes; }
-                    }
+                    int x1 = 14;
+                    modeX(x1);
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *0.5;
                     Attributes[2].PmWeakness = Attributes[2].PmWeakness *0.5;
                     Attributes[3].PmWeakness = Attributes[3].PmWeakness *0.5;
@@ -570,18 +437,8 @@ namespace PokemonLab.ViewModels
             {
                 _dark = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[15].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[15].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[15].PmAttributes; }
-                    }
+                    int x1 = 15;
+                    modeX(x1);
                     Attributes[6].PmWeakness = Attributes[6].PmWeakness *2;
                     Attributes[10].PmWeakness = Attributes[13].PmWeakness *0;
                     Attributes[11].PmWeakness = Attributes[11].PmWeakness *2;
@@ -600,18 +457,8 @@ namespace PokemonLab.ViewModels
             {
                 _steel = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[16].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[16].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[16].PmAttributes; }
-                    }
+                    int x1 = 16;
+                    modeX(x1);
                     Attributes[0].PmWeakness = Attributes[0].PmWeakness *0.5;
                     Attributes[1].PmWeakness = Attributes[1].PmWeakness *2;
                     Attributes[3].PmWeakness = Attributes[3].PmWeakness *0.5;
@@ -638,18 +485,8 @@ namespace PokemonLab.ViewModels
             {
                 _fairy = new RelayCommand((x) =>
                 {
-                    if (!OAE)
-                    {
-                        Attributes = PokemonAttr();
-                        Selectattribute = Attributes[17].PmAttributes;
-                    }
-                    else
-                    {
-                        if (Selectattribute == "")
-                        { Selectattribute = Attributes[17].PmAttributes; }
-                        else
-                        { Selectattribute = Selectattribute + " / " + Attributes[17].PmAttributes; }
-                    }
+                    int x1 = 17;
+                    modeX(x1);
                     Attributes[6].PmWeakness = Attributes[6].PmWeakness *0.5;
                     Attributes[7].PmWeakness = Attributes[7].PmWeakness *2;
                     Attributes[11].PmWeakness = Attributes[11].PmWeakness *0.5;
